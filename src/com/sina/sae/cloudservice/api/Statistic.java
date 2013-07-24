@@ -24,7 +24,7 @@ public class Statistic {
 	 * @param viewid 组件唯一标示
 	 */
 	public static void singleEvent(String viewid)throws CloudServiceException{
-		String sql = "insert into statistic_clicks values('"+viewid+"', now(),now(),1) on duplicate key update count=count+1,updatetime=now();";
+		String sql = "insert into statistic_clicks values('"+viewid+"', now(),now(),1) on duplicate key update clickcount=clickcount+1,lastclick=now();";
 		commitStatisticData(sql);
 	}
 	
